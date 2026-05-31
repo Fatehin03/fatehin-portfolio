@@ -40,9 +40,9 @@ const config: Config = {
           '100%': { backgroundPosition: '100% 50%' },
         },
         pulseGlow: {
-          '0%, 100%': { opacity: 0.35, transform: 'scale(1)' },
-          '50%': { opacity: 0.7, transform: 'scale(1.08)' },
-        },
+  '0%, 100%': { opacity: '0.35', transform: 'scale(1)' },
+  '50%': { opacity: '0.7', transform: 'scale(1.08)' },
+},
         scan: {
           '0%': { transform: 'translateY(-100%)' },
           '100%': { transform: 'translateY(100%)' },
