@@ -1,1 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, rgba(59, 130, 246, 0.12), transparent 25%),
+    radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.12), transparent 20%),
+    #02050d;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(59, 130, 246, 0.35);
+  color: white;
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-white via-electric-200 to-violet-300 bg-clip-text text-transparent;
+  }
+
+  .glass-panel {
+    @apply border border-white/10 bg-white/6 backdrop-blur-2xl shadow-soft;
+  }
+
+  .grid-fade {
+    mask-image: linear-gradient(to bottom, black, black 85%, transparent);
+  }
+
+  .noise-texture {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+}
+
+@layer components {
+  .premium-border {
+    position: relative;
+  }
+
+  .premium-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(255,255,255,.12), rgba(59,130,246,.45), rgba(139,92,246,.45));
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+    pointer-events: none;
+  }
+}
